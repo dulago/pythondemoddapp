@@ -38,7 +38,7 @@ class Ping (Resource):
 class HttpRequest (Resource):
     @tracer.wrap()
     def get(self):
-        r = requests.get('http://localhost:80/ping')
+        r = requests.get('http://pythonapphost.arthur/ping')
         # return json.dumps(r.content).encode('utf-8')
         return json.dump(r.content).encode('utf-8')
 
