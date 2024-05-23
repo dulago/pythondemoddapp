@@ -31,4 +31,11 @@ CLIENT
 docker run --name pythonclient -d -p 8090:80 -e DD_SERVICE=pythonclient -e DD_ENV=dev -e DD_VERSION=version dulago/pythondemoapp:version
 ```
 
+Available operations are:
+- http://localhost:[port]/home - displays a Hello World message
+- http://localhost:[port]/ping - returns a "Pong"
+- http://localhost:[port]/httprequest - run on the client container to call the server container in the /ping route
+- http://localhost:[port]/health - returns a message informing that service is healthy
+
+
 Then call the client container on /httprequest

@@ -36,12 +36,14 @@ class Ping (Resource):
         return 'Pong!'
 
 class HttpRequest (Resource):
+    @tracer.wrap()
     def get(self):
         r = requests.get('http://pythonapphost.arthur/ping')
         # return json.dumps(r.content).encode('utf-8')
         return json.dump(r.content).encode('utf-8')
 
 class Health (Resource):
+    @tracer.wrap()
     def get(self):
         return 'Ta tudo bem'
 
