@@ -22,5 +22,6 @@ RUN pip install requests
 WORKDIR /opt/python
 
 EXPOSE 80
+EXPOSE 8080
 
 ENTRYPOINT [ "/bin/bash", "-c", "ddtrace-run python helloworld.py" ]
